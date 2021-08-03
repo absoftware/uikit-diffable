@@ -102,13 +102,8 @@
 		B057253026B9B9C8005E3037 /* UIKitDiffable */ = {
 			isa = PBXGroup;
 			children = (
-				B057253126B9B9C8005E3037 /* AppDelegate.swift */,
-				B057253326B9B9C8005E3037 /* SceneDelegate.swift */,
-				B057253526B9B9C8005E3037 /* ViewController.swift */,
-				B057253726B9B9C8005E3037 /* Main.storyboard */,
-				B057253A26B9B9C9005E3037 /* Assets.xcassets */,
-				B057253C26B9B9C9005E3037 /* LaunchScreen.storyboard */,
-				B057253F26B9B9C9005E3037 /* Info.plist */,
+				B079F08926B9C4D900A7BF36 /* Application */,
+				B079F08A26B9C5E900A7BF36 /* Resources */,
 			);
 			path = UIKitDiffable;
 			sourceTree = "<group>";
@@ -120,6 +115,27 @@
 				B057254A26B9B9C9005E3037 /* Info.plist */,
 			);
 			path = UIKitDiffableTests;
+			sourceTree = "<group>";
+		};
+		B079F08926B9C4D900A7BF36 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B057253126B9B9C8005E3037 /* AppDelegate.swift */,
+				B057253F26B9B9C9005E3037 /* Info.plist */,
+				B057253C26B9B9C9005E3037 /* LaunchScreen.storyboard */,
+				B057253726B9B9C8005E3037 /* Main.storyboard */,
+				B057253326B9B9C8005E3037 /* SceneDelegate.swift */,
+				B057253526B9B9C8005E3037 /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B079F08A26B9C5E900A7BF36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B057253A26B9B9C9005E3037 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D93993252D64949207596B37 /* Frameworks */ = {
@@ -483,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UIKitDiffable/Info.plist;
+				INFOPLIST_FILE = UIKitDiffable/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.absoftware.uikit-diffable";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -503,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UIKitDiffable/Info.plist;
+				INFOPLIST_FILE = UIKitDiffable/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,7 +528,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.absoftware.uikit-diffable";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
