@@ -1,0 +1,11 @@
+
+# MacOS temporary files
+.DS_Store
+
+# Xcode
+xcuserdata
+
+# Pods
+Pods/
+Podfile.lock
+*.xcworkspace
