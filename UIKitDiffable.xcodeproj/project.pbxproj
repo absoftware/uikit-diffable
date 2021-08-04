@@ -11,7 +11,6 @@
 		4BAA51A21E9F67401C656265 /* Pods_UIKitDiffableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60D1E801F895E6BBAC82061 /* Pods_UIKitDiffableTests.framework */; };
 		B057253226B9B9C8005E3037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057253126B9B9C8005E3037 /* AppDelegate.swift */; };
 		B057253426B9B9C8005E3037 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057253326B9B9C8005E3037 /* SceneDelegate.swift */; };
-		B057253626B9B9C8005E3037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057253526B9B9C8005E3037 /* ViewController.swift */; };
 		B057253B26B9B9C9005E3037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B057253A26B9B9C9005E3037 /* Assets.xcassets */; };
 		B057253E26B9B9C9005E3037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B057253C26B9B9C9005E3037 /* LaunchScreen.storyboard */; };
 		B057254926B9B9C9005E3037 /* UIKitDiffableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057254826B9B9C9005E3037 /* UIKitDiffableTests.swift */; };
@@ -20,7 +19,6 @@
 		B066CAC626B9CC10009A2C8B /* MenuFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066CAC226B9CC10009A2C8B /* MenuFlowController.swift */; };
 		B066CAC726B9CC10009A2C8B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066CAC326B9CC10009A2C8B /* MenuViewModel.swift */; };
 		B066CAC926B9CC31009A2C8B /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066CAC826B9CC31009A2C8B /* DependencyManager.swift */; };
-		B076E01326BAC63100111E95 /* SceneConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076E01226BAC63100111E95 /* SceneConfiguration.swift */; };
 		B076E02126BACAD200111E95 /* RootNavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076E01D26BACAD200111E95 /* RootNavigationFactory.swift */; };
 		B076E02226BACAD200111E95 /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076E01E26BACAD200111E95 /* RootNavigationViewController.swift */; };
 		B076E02326BACAD200111E95 /* RootNavigationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076E01F26BACAD200111E95 /* RootNavigationFlowController.swift */; };
@@ -44,7 +42,6 @@
 		B057252E26B9B9C8005E3037 /* UIKitDiffable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDiffable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B057253126B9B9C8005E3037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B057253326B9B9C8005E3037 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B057253526B9B9C8005E3037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B057253A26B9B9C9005E3037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B057253D26B9B9C9005E3037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B057253F26B9B9C9005E3037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +53,6 @@
 		B066CAC226B9CC10009A2C8B /* MenuFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlowController.swift; sourceTree = "<group>"; };
 		B066CAC326B9CC10009A2C8B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		B066CAC826B9CC31009A2C8B /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
-		B076E01226BAC63100111E95 /* SceneConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneConfiguration.swift; sourceTree = "<group>"; };
 		B076E01D26BACAD200111E95 /* RootNavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationFactory.swift; sourceTree = "<group>"; };
 		B076E01E26BACAD200111E95 /* RootNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		B076E01F26BACAD200111E95 /* RootNavigationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationFlowController.swift; sourceTree = "<group>"; };
@@ -154,9 +150,7 @@
 				B066CAC826B9CC31009A2C8B /* DependencyManager.swift */,
 				B057253F26B9B9C9005E3037 /* Info.plist */,
 				B057253C26B9B9C9005E3037 /* LaunchScreen.storyboard */,
-				B076E01226BAC63100111E95 /* SceneConfiguration.swift */,
 				B057253326B9B9C8005E3037 /* SceneDelegate.swift */,
-				B057253526B9B9C8005E3037 /* ViewController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -383,13 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B076E02226BACAD200111E95 /* RootNavigationViewController.swift in Sources */,
-				B057253626B9B9C8005E3037 /* ViewController.swift in Sources */,
 				B066CAC726B9CC10009A2C8B /* MenuViewModel.swift in Sources */,
 				B076E02126BACAD200111E95 /* RootNavigationFactory.swift in Sources */,
 				B066CAC526B9CC10009A2C8B /* MenuViewController.swift in Sources */,
 				B076E02326BACAD200111E95 /* RootNavigationFlowController.swift in Sources */,
 				B076E02426BACAD200111E95 /* RootNavigationViewModel.swift in Sources */,
-				B076E01326BAC63100111E95 /* SceneConfiguration.swift in Sources */,
 				B066CAC426B9CC10009A2C8B /* MenuFactory.swift in Sources */,
 				B066CAC926B9CC31009A2C8B /* DependencyManager.swift in Sources */,
 				B057253226B9B9C8005E3037 /* AppDelegate.swift in Sources */,
