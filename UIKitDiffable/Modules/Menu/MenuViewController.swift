@@ -23,10 +23,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
 
     // MARK: - Properties
 
-    private lazy var data = self.viewModel.createData(useCacheFrom: nil)
+    private lazy var data = MenuViewData(viewModel: self.viewModel).createData(useCacheFrom: nil)
 
     private lazy var dataSource = MenuViewDataSource(tableView: self.tableView) { tableView, indexPath, itemIdentifier in
-
         let item = self.data.item(identifier: itemIdentifier)!
         let cell = tableView.dequeue(cell: TableViewCell.self, indexPath: indexPath)
         self.update(cell: cell, indexPath: indexPath, item: item)
@@ -57,7 +56,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
 
     // MARK: - MenuViewController methods
     
-    private func update(cell: TableViewCell, indexPath: IndexPath, item: MenuViewDataItem) {
+    private func update(cell: TableViewCell, indexPath: IndexPath, item: MenuViewData.Item) {
         cell.accessoryType = .disclosureIndicator
         switch item.identifier {
         case .basicTableView:

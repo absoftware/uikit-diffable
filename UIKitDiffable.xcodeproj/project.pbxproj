@@ -29,7 +29,6 @@
 		B080AF0726BC42E300F2771E /* ItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AF0626BC42E300F2771E /* ItemProtocol.swift */; };
 		B080AF0926BC42EE00F2771E /* SectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AF0826BC42EE00F2771E /* SectionProtocol.swift */; };
 		B080AF0C26BC442600F2771E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AF0B26BC442600F2771E /* TableViewCell.swift */; };
-		B080AF0E26BC458A00F2771E /* MenuViewModel+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AF0D26BC458A00F2771E /* MenuViewModel+Data.swift */; };
 		B080AF1026BC484900F2771E /* MenuViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B080AF0F26BC484900F2771E /* MenuViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		B080AF0626BC42E300F2771E /* ItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocol.swift; sourceTree = "<group>"; };
 		B080AF0826BC42EE00F2771E /* SectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionProtocol.swift; sourceTree = "<group>"; };
 		B080AF0B26BC442600F2771E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		B080AF0D26BC458A00F2771E /* MenuViewModel+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuViewModel+Data.swift"; sourceTree = "<group>"; };
 		B080AF0F26BC484900F2771E /* MenuViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewDataSource.swift; sourceTree = "<group>"; };
 		B60D1E801F895E6BBAC82061 /* Pods_UIKitDiffableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitDiffableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F357FB2AC4038D756789C4C5 /* Pods-UIKitDiffableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitDiffableTests.debug.xcconfig"; path = "Target Support Files/Pods-UIKitDiffableTests/Pods-UIKitDiffableTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				B080AEFC26BC37D100F2771E /* MenuViewData.swift */,
 				B080AF0F26BC484900F2771E /* MenuViewDataSource.swift */,
 				B066CAC326B9CC10009A2C8B /* MenuViewModel.swift */,
-				B080AF0D26BC458A00F2771E /* MenuViewModel+Data.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 				B080AF0C26BC442600F2771E /* TableViewCell.swift in Sources */,
 				B057253426B9B9C8005E3037 /* SceneDelegate.swift in Sources */,
 				B080AEFD26BC37D100F2771E /* MenuViewData.swift in Sources */,
-				B080AF0E26BC458A00F2771E /* MenuViewModel+Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

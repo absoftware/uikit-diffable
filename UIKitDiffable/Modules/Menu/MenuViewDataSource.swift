@@ -8,7 +8,7 @@
 import UIKit
 import DiffableDataSources
 
-class MenuViewDataSource: TableViewDiffableDataSource<MenuViewDataSection.Identifier, MenuViewDataItem.Identifier> {
+class MenuViewDataSource: TableViewDiffableDataSource<MenuViewData.Section.Identifier, MenuViewData.Item.Identifier> {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionIdentifier = self.sectionIdentifier(for: section)!

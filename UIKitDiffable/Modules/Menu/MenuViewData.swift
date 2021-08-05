@@ -7,21 +7,57 @@
 
 import Foundation
 
-struct MenuViewDataSection: SectionProtocol {
+class MenuViewData {
 
-    enum Identifier {
-        case basic
+    // MARK: - Types
+
+    struct Section: SectionProtocol {
+
+        enum Identifier {
+            case basic
+        }
+
+        var identifier: Identifier
     }
 
-    var identifier: Identifier
-}
+    struct Item: ItemProtocol {
 
-struct MenuViewDataItem: ItemProtocol {
+        enum Identifier {
+            case basicTableView
+            case basicCollectionView
+        }
 
-    enum Identifier {
-        case basicTableView
-        case basicCollectionView
+        var identifier: Identifier
     }
 
-    var identifier: Identifier
+    // MARK: - Dependencies
+
+    private let viewModel: MenuViewModel
+
+    // MARK: - Initializers
+
+    init(viewModel: MenuViewModel) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Actions
+
+    func createData(useCacheFrom dataCache: TabularData<Section, Item>?) -> TabularData<Section, Item> {
+
+        // Data
+        var data = TabularData<Section, Item>(useCacheFrom: dataCache)
+
+        // Sections
+        data.append(sections: [
+            Section(identifier: .basic)
+        ])
+
+        // Items for basic section
+        data.append(items: [
+            Item(identifier: .basicTableView),
+            Item(identifier: .basicCollectionView)
+        ], toSection: .basic)
+
+        return data
+    }
 }
