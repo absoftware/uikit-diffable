@@ -10,7 +10,12 @@
 
 import UIKit
 
-class MenuFlowController {
+protocol MenuFlowControllerProtocol: AnyObject {
+    func showTableView()
+    func showCollectionView()
+}
+
+class MenuFlowController: MenuFlowControllerProtocol {
     
     // MARK: - Dependencies
 
@@ -28,7 +33,13 @@ class MenuFlowController {
         self.dependencyManager = dependencyManager
     }
 
-    // MARK: - Actions
+    // MARK: - MenuFlowControllerProtocol actions
 
-    // Navigation actions here...
+    func showTableView() {
+
+    }
+
+    func showCollectionView() {
+
+    }
 }

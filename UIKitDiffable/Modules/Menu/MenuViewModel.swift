@@ -15,23 +15,37 @@ protocol MenuViewModelDelegate: AnyObject {
 }
 
 class MenuViewModel {
-    
+
+    // MARK: - Types
+
+    enum Item {
+        case tableView
+        case collectionView
+    }
+
     // MARK: - Dependencies
     
     weak var delegate: MenuViewModelDelegate?
-    private let flowController: MenuFlowController
-    
+    private let flowController: MenuFlowControllerProtocol
+
     // MARK: - Properties
     
     // Properties here...
     
     // MARK: - Initializers
     
-    init(flowController: MenuFlowController) {
+    init(flowController: MenuFlowControllerProtocol) {
         self.flowController = flowController
     }
     
     // MARK: - Actions
     
-    // Handlers of UI actions here...
+    func selected(item: Item) {
+        switch item {
+        case .tableView:
+            self.flowController.showTableView()
+        case .collectionView:
+            self.flowController.showCollectionView()
+        }
+    }
 }

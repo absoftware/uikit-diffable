@@ -23,7 +23,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
 
     // MARK: - Properties
 
-    // Properties go here
+    private lazy var data = self.viewModel.createData(useCacheFrom: nil)
+
+    private lazy var dataSource = MenuViewDataSource(tableView: self.tableView) { tableView, indexPath, itemIdentifier in
+
+        let item = self.data.item(identifier: itemIdentifier)!
+        let cell = tableView.dequeue(cell: TableViewCell.self, indexPath: indexPath)
+        self.update(cell: cell, indexPath: indexPath, item: item)
+        return cell
+    }
 
 	// MARK: - UIViewController methods
 
@@ -34,40 +42,45 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
         self.view.backgroundColor = .white
         
         // Table view
+        self.tableView.allowsSelection = true
         self.tableView.delegate = self
         self.view.addSubview(self.tableView) {
             $0.fill()
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+        // Register cells
+        self.tableView.register(cell: TableViewCell.self)
+
+        // Apply snapshot
+        self.dataSource.apply(self.data.diffableSnapshot)
     }
 
     // MARK: - MenuViewController methods
     
-    // Custom methods here...
-    
+    private func update(cell: TableViewCell, indexPath: IndexPath, item: MenuViewDataItem) {
+        cell.accessoryType = .disclosureIndicator
+        switch item.identifier {
+        case .basicTableView:
+            cell.textLabel?.text = "Test UITableView"
+        case .basicCollectionView:
+            cell.textLabel?.text = "Test UICollectionView"
+        }
+    }
+
     // MARK: - UITableViewDelegate methods
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        // Deselect
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        // Action
+        let itemIdentifier = self.dataSource.itemIdentifier(for: indexPath)!
+        switch itemIdentifier {
+        case .basicTableView:
+            self.viewModel.selected(item: .tableView)
+        case .basicCollectionView:
+            self.viewModel.selected(item: .collectionView)
+        }
     }
 
     // MARK: - MenuViewModelDelegate methods
