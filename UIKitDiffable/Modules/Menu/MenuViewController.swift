@@ -23,9 +23,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
 
     // MARK: - Properties
 
-    private lazy var data = MenuViewData(viewModel: self.viewModel).createData(useCacheFrom: nil)
+    private lazy var data = MenuTableViewData(viewModel: self.viewModel).createData(useCacheFrom: nil)
 
-    private lazy var dataSource = MenuViewDataSource(tableView: self.tableView) { tableView, indexPath, itemIdentifier in
+    private lazy var dataSource = MenuTableViewDataSource(tableView: self.tableView) { tableView, indexPath, itemIdentifier in
         let item = self.data.item(identifier: itemIdentifier)!
         let cell = tableView.dequeue(cell: TableViewCell.self, indexPath: indexPath)
         self.update(cell: cell, indexPath: indexPath, item: item)
@@ -54,9 +54,20 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
         self.dataSource.apply(self.data.diffableSnapshot)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.deselectMenuItem(animated)
+    }
+
     // MARK: - MenuViewController methods
+
+    private func deselectMenuItem(_ animated: Bool) {
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+    }
     
-    private func update(cell: TableViewCell, indexPath: IndexPath, item: MenuViewData.Item) {
+    private func update(cell: TableViewCell, indexPath: IndexPath, item: MenuTableViewData.Item) {
         cell.accessoryType = .disclosureIndicator
         switch item.identifier {
         case .basicTableView:
@@ -67,12 +78,8 @@ class MenuViewController: UIViewController, UITableViewDelegate, MenuViewModelDe
     }
 
     // MARK: - UITableViewDelegate methods
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Deselect
-        tableView.deselectRow(at: indexPath, animated: true)
 
-        // Action
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let itemIdentifier = self.dataSource.itemIdentifier(for: indexPath)!
         switch itemIdentifier {
         case .basicTableView:

@@ -10,12 +10,12 @@
 
 import UIKit
 
-protocol MenuFlowControllerProtocol: AnyObject {
+protocol MenuFlowProtocol: AnyObject {
     func showTableView()
     func showCollectionView()
 }
 
-class MenuFlowController: MenuFlowControllerProtocol {
+class MenuFlowController: MenuFlowProtocol {
     
     // MARK: - Dependencies
 
@@ -33,13 +33,25 @@ class MenuFlowController: MenuFlowControllerProtocol {
         self.dependencyManager = dependencyManager
     }
 
-    // MARK: - MenuFlowControllerProtocol actions
+    // MARK: - MenuFlowProtocol actions
 
     func showTableView() {
+        guard let navigationController = self.navigationController else {
+            return
+        }
 
+        BTTFactory.pushIn(
+            navigationController: navigationController,
+            dependencyManager: self.dependencyManager)
     }
 
     func showCollectionView() {
+        guard let navigationController = self.navigationController else {
+            return
+        }
 
+        BTCFactory.pushIn(
+            navigationController: navigationController,
+            dependencyManager: self.dependencyManager)
     }
 }

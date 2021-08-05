@@ -11,30 +11,44 @@
 import Foundation
 
 protocol MenuViewModelDelegate: AnyObject {
-    // Specify callback methods for view controller.
+    // Specify callback methods for view controller here...
 }
 
 class MenuViewModel {
 
     // MARK: - Types
 
+    enum SectionIdentifier {
+        case basic
+    }
+
     enum Item {
         case tableView
         case collectionView
     }
 
+    struct Section {
+        var identifier: SectionIdentifier
+        var items: [Item]
+    }
+
     // MARK: - Dependencies
     
     weak var delegate: MenuViewModelDelegate?
-    private let flowController: MenuFlowControllerProtocol
+    private let flowController: MenuFlowProtocol
 
     // MARK: - Properties
     
-    // Properties here...
-    
+    let sections: [Section] = [
+        Section(identifier: .basic, items: [
+            .tableView,
+            .collectionView
+        ])
+    ]
+
     // MARK: - Initializers
     
-    init(flowController: MenuFlowControllerProtocol) {
+    init(flowController: MenuFlowProtocol) {
         self.flowController = flowController
     }
     

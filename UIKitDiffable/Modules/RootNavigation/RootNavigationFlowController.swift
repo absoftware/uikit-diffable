@@ -10,7 +10,11 @@
 
 import UIKit
 
-class RootNavigationFlowController {
+protocol RootNavigationFlowProtocol: AnyObject {
+    // Specify navigation actions exposed for view model here...
+}
+
+class RootNavigationFlowController: RootNavigationFlowProtocol {
     
     // MARK: - Dependencies
 
@@ -26,7 +30,7 @@ class RootNavigationFlowController {
         self.dependencyManager = dependencyManager
     }
 
-    // MARK: - Actions
+    // MARK: - RootNavigationFlowProtocol actions
 
-    // Navigation actions here...
+    // Implement navigation actions here...
 }

@@ -1,8 +1,8 @@
 //
-//  RootNavigationViewModel.swift
+//  BTTViewModel.swift
 //  UIKitDiffable
 //
-//  Created by Ariel Bogdziewicz on 04/08/2021.
+//  Created by Ariel Bogdziewicz on 05/08/2021.
 //
 //  MVVM module
 //  Template designed by Ariel Bogdziewicz.
@@ -10,16 +10,16 @@
 
 import Foundation
 
-protocol RootNavigationViewModelDelegate: AnyObject {
+protocol BTTViewModelDelegate: AnyObject {
     // Specify callback methods for view controller here...
 }
 
-class RootNavigationViewModel {
+class BTTViewModel {
     
     // MARK: - Dependencies
     
-    weak var delegate: RootNavigationViewModelDelegate?
-    private let flowController: RootNavigationFlowProtocol
+    weak var delegate: BTTViewModelDelegate?
+    private let flowController: BTTFlowProtocol
     
     // MARK: - Properties
     
@@ -27,7 +27,7 @@ class RootNavigationViewModel {
     
     // MARK: - Initializers
     
-    init(flowController: RootNavigationFlowProtocol) {
+    init(flowController: BTTFlowProtocol) {
         self.flowController = flowController
     }
     

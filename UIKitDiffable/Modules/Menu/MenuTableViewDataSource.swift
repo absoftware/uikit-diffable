@@ -1,5 +1,5 @@
 //
-//  MenuViewDataSource.swift
+//  MenuTableViewDataSource.swift
 //  UIKitDiffable
 //
 //  Created by Ariel Bogdziewicz on 05/08/2021.
@@ -8,7 +8,7 @@
 import UIKit
 import DiffableDataSources
 
-class MenuViewDataSource: TableViewDiffableDataSource<MenuViewData.Section.Identifier, MenuViewData.Item.Identifier> {
+class MenuTableViewDataSource: TableViewDiffableDataSource<MenuTableViewData.Section.Identifier, MenuTableViewData.Item.Identifier> {
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let sectionIdentifier = self.sectionIdentifier(for: section)!
