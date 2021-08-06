@@ -13,6 +13,11 @@
 		B022178E26BC69CB00F9595F /* BTTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022178A26BC69CB00F9595F /* BTTViewController.swift */; };
 		B022178F26BC69CB00F9595F /* BTTFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022178B26BC69CB00F9595F /* BTTFlowController.swift */; };
 		B022179026BC69CB00F9595F /* BTTViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022178C26BC69CB00F9595F /* BTTViewModel.swift */; };
+		B022179326BC927C00F9595F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022179226BC927C00F9595F /* CollectionViewCell.swift */; };
+		B022179526BC942700F9595F /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022179426BC942700F9595F /* CollectionReusableView.swift */; };
+		B022179C26BC9CC900F9595F /* CollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022179B26BC9CC900F9595F /* CollectionViewSectionHeader.swift */; };
+		B02217A026BCA9FF00F9595F /* BTCItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022179F26BCA9FF00F9595F /* BTCItemCell.swift */; };
+		B02217A326BCAF0700F9595F /* IndexPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02217A226BCAF0700F9595F /* IndexPath+Extensions.swift */; };
 		B057253226B9B9C8005E3037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057253126B9B9C8005E3037 /* AppDelegate.swift */; };
 		B057253426B9B9C8005E3037 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B057253326B9B9C8005E3037 /* SceneDelegate.swift */; };
 		B057253B26B9B9C9005E3037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B057253A26B9B9C9005E3037 /* Assets.xcassets */; };
@@ -60,6 +65,11 @@
 		B022178A26BC69CB00F9595F /* BTTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTTViewController.swift; sourceTree = "<group>"; };
 		B022178B26BC69CB00F9595F /* BTTFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTTFlowController.swift; sourceTree = "<group>"; };
 		B022178C26BC69CB00F9595F /* BTTViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTTViewModel.swift; sourceTree = "<group>"; };
+		B022179226BC927C00F9595F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B022179426BC942700F9595F /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
+		B022179B26BC9CC900F9595F /* CollectionViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeader.swift; sourceTree = "<group>"; };
+		B022179F26BCA9FF00F9595F /* BTCItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTCItemCell.swift; sourceTree = "<group>"; };
+		B02217A226BCAF0700F9595F /* IndexPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndexPath+Extensions.swift"; sourceTree = "<group>"; };
 		B057252E26B9B9C8005E3037 /* UIKitDiffable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDiffable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B057253126B9B9C8005E3037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B057253326B9B9C8005E3037 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +137,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B022179126BC752500F9595F /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B022179426BC942700F9595F /* CollectionReusableView.swift */,
+				B022179226BC927C00F9595F /* CollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		B022179826BC9C5100F9595F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B022179926BC9C5D00F9595F /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B022179926BC9C5D00F9595F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B022179A26BC9C9900F9595F /* CollectionView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B022179A26BC9C9900F9595F /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B022179B26BC9CC900F9595F /* CollectionViewSectionHeader.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		B02217A126BCAEE100F9595F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B02217A226BCAF0700F9595F /* IndexPath+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B057252526B9B9C8005E3037 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				B079F08926B9C4D900A7BF36 /* Application */,
+				B022179826BC9C5100F9595F /* Common */,
 				B079F08B26B9C75A00A7BF36 /* Modules */,
 				B079F08A26B9C5E900A7BF36 /* Resources */,
 			);
@@ -225,6 +277,8 @@
 		B080AF0026BC421700F2771E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				B022179126BC752500F9595F /* CollectionView */,
+				B02217A126BCAEE100F9595F /* Extensions */,
 				B080AF0A26BC440F00F2771E /* TableView */,
 				B080AF0126BC422900F2771E /* TabularData */,
 			);
@@ -257,6 +311,7 @@
 				B080AF1C26BC5ADE00F2771E /* BTCCollectionViewDataSource.swift */,
 				B080AF1226BC579E00F2771E /* BTCFactory.swift */,
 				B080AF1426BC579E00F2771E /* BTCFlowController.swift */,
+				B022179F26BCA9FF00F9595F /* BTCItemCell.swift */,
 				B080AF1326BC579E00F2771E /* BTCViewController.swift */,
 				B080AF1526BC579E00F2771E /* BTCViewModel.swift */,
 			);
@@ -470,6 +525,9 @@
 				B076E02226BACAD200111E95 /* RootNavigationViewController.swift in Sources */,
 				B022178E26BC69CB00F9595F /* BTTViewController.swift in Sources */,
 				B022178D26BC69CB00F9595F /* BTTFactory.swift in Sources */,
+				B022179526BC942700F9595F /* CollectionReusableView.swift in Sources */,
+				B022179C26BC9CC900F9595F /* CollectionViewSectionHeader.swift in Sources */,
+				B02217A326BCAF0700F9595F /* IndexPath+Extensions.swift in Sources */,
 				B080AF1026BC484900F2771E /* MenuTableViewDataSource.swift in Sources */,
 				B080AF0526BC426500F2771E /* DiffableDataSourceSnapshot+Extensions.swift in Sources */,
 				B080AF0726BC42E300F2771E /* ItemProtocol.swift in Sources */,
@@ -485,6 +543,8 @@
 				B080AF1826BC579E00F2771E /* BTCFlowController.swift in Sources */,
 				B080AF0926BC42EE00F2771E /* SectionProtocol.swift in Sources */,
 				B080AF0326BC424100F2771E /* TabularData.swift in Sources */,
+				B02217A026BCA9FF00F9595F /* BTCItemCell.swift in Sources */,
+				B022179326BC927C00F9595F /* CollectionViewCell.swift in Sources */,
 				B076E02426BACAD200111E95 /* RootNavigationViewModel.swift in Sources */,
 				B066CAC426B9CC10009A2C8B /* MenuFactory.swift in Sources */,
 				B066CAC926B9CC31009A2C8B /* DependencyManager.swift in Sources */,
