@@ -110,12 +110,17 @@ class BTCViewController: UIViewController, UICollectionViewDelegateFlowLayout, B
         cell.switcher.addTarget(self, action: #selector(switcherValueChanged(_:)), for: .valueChanged)
     }
 
+    /// Reload without animation. Selection of the cell is not displayed at all as side effect.
     private func reload(indexPath: IndexPath) {
         let item = BTCCollectionViewData(viewModel: self.viewModel).createItem(at: indexPath)
         self.data.reload(items: [item])
-        self.dataSource.apply(self.data.diffableSnapshot)
+        self.dataSource.apply(self.data.diffableSnapshot, animatingDifferences: false) {
+            // TODO: Do we need to do sth here in animation completion handler?
+        }
     }
 
+    /// Reload with animation. Animation is related to entire cell using some transition between states.
+    /// So we don't have animations for specific subviews but for entire cell.
     private func reloadWithAnimation(indexPath: IndexPath) {
         let item = BTCCollectionViewData(viewModel: self.viewModel).createItem(at: indexPath)
         self.data.reload(items: [item])
@@ -124,6 +129,8 @@ class BTCViewController: UIViewController, UICollectionViewDelegateFlowLayout, B
         }
     }
 
+    /// Update without reloading. Without animation. It works as expected with animation for
+    /// disappearing selection but label and switch are immediately updated.
     private func reconfigure(indexPath: IndexPath) {
         let item = BTCCollectionViewData(viewModel: self.viewModel).createItem(at: indexPath)
         self.data.update(items: [item])
@@ -132,6 +139,8 @@ class BTCViewController: UIViewController, UICollectionViewDelegateFlowLayout, B
         }
     }
 
+    /// Update without reloading. With animation. It works as expected with animation for
+    /// disappearing selection. Label is animated nicely.
     private func reconfigureWithAnimation(indexPath: IndexPath) {
         let item = BTCCollectionViewData(viewModel: self.viewModel).createItem(at: indexPath)
         self.data.update(items: [item])
@@ -186,6 +195,7 @@ class BTCViewController: UIViewController, UICollectionViewDelegateFlowLayout, B
     // MARK: - BTCViewModelDelegate methods
     
     func viewModel(_ viewModel: BTCViewModel, updatedItemAt indexPath: IndexPath) {
+        // We show here that reloading of cells bring worse effects than manual reconfiguration of cells.
         let section = viewModel.sections[indexPath.section]
         switch section.identifier {
         case .reload:
