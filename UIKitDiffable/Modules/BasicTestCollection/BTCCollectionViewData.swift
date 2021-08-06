@@ -83,7 +83,7 @@ struct BTCCollectionViewData {
         return data
     }
 
-    func createItem(at indexPath: IndexPath) -> Item {
+    func createItem(from indexPath: IndexPath) -> Item {
         let item = self.viewModel.sections[indexPath.section].items[indexPath.item]
         return Item(
             identifier: item.identifier,
